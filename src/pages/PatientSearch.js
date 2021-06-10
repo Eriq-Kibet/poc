@@ -11,24 +11,14 @@ import {
 const rows = [
     {
         id: 'load-balancer-1',
-        name: 'Load Balancer 1',
-        rule: 'Round robin',
-        Status: 'Starting',
-    },
-    {
-        id: 'load-balancer-2',
-        name: 'Load Balancer 2',
-        rule: 'DNS delegation',
-        status: 'Active',
-    },
-    {
-        id: 'load-balancer-3',
-        name: 'Load Balancer 3',
-        rule: 'Round robin',
-        status: 'Disabled',
-    },
+        patientid:'45545df',
+        name: 'Errr',
+        age: 20,
+        gender: 'Starting',
+        contact: '07222111212'
+    }
 ];
-const headers = ['Name', 'Rule', 'Status'];
+const headers = ['Patient ID','Name', 'Age', 'Gender', 'Contact'];
 
 
 function PatientSearch() {
@@ -55,7 +45,7 @@ function PatientSearch() {
                     ))}
                 </TableBody>
             </Table>
-  );
+  
 
         </div>
 

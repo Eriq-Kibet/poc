@@ -6,10 +6,26 @@ import './index.css'
 import { Button, FormGroup, TextInput } from 'carbon-components-react';
 
 const apiUrl = 'http://10.50.80.115:8090/amrs/ws/rest/v1/';
-axios(apiUrl)
-    .then((response) => {
-        console.log(response)
-    })
+const uName = 'testuser';
+const pass = 'Ampath123'
+const credentials = btoa(uName + ':' + pass);
+const basicAuth = 'Basic ' + credentials;
+// axios.post(apiUrl, {
+//     headers: { 'Authorization ': + basicAuth }
+// })
+axios.post(apiUrl, {},{
+    auth:{
+        Username: 'testuser',
+        Password:  'Ampath123'
+    }
+})
+    .then(function (response) {
+    console.log('Authenticated');
+}).catch (function(error) {
+    console.log("Error on authentication");
+});
+
+
 
 const InvalidPasswordProps = {
     className: 'some-class',

@@ -35,4 +35,14 @@
 span{
     display: flex;
 }
-
+.addText{
+    margin-left: 10%;
+    
+}
+.addPatientForm{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.searchBar{
+    padding: 5px;
+}

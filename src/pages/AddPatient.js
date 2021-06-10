@@ -7,7 +7,7 @@ function AddPatient() {
     return (
         <div>
             <h1 className="addText"><FaceAdd32/>AddPatient</h1>
-            <form>
+            <form className="addPatientForm">
                 <div className="column">
                     <TextInput id="firstName" labelText="First Name" />
                     <TextInput id="middleName" labelText="Middle Name" />
@@ -17,8 +17,8 @@ function AddPatient() {
                         <RadioButton labelText='Female' value='Female' />
                         <RadioButton labelText='Other' value='Other' />
                     </RadioButtonGroup>
-                    <TextInput id="idNumber" labelText="ID Number" />
-                    <TextInput id="phoneNumber" labelText="Phone Number" />
+                    <TextInput id="idNumber" labelText="ID Number"  type="number"/>
+                    <TextInput id="phoneNumber" labelText="Phone Number"  type="number"/>
                     <span>
                         <DatePicker datePickerType='single' ><DatePickerInput
                             placeholder="mm/dd/yyy" labelText='Date of Birth' id='date-picker' /></DatePicker>
