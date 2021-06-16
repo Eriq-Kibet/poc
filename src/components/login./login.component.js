@@ -1,6 +1,6 @@
 import { TextInput, Button, FormGroup } from "carbon-components-react";
 import React, { useState } from "react";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 import { Authenticate } from "./login.resource";
 import './login.component.css'
 

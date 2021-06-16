@@ -1,4 +1,4 @@
-import './displayPatient.css'
+import './patientDisplay.component.css'
 
 function DisplayPatient() {
     return (

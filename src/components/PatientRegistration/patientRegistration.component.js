@@ -1,5 +1,5 @@
 import { FaceAdd32 } from "@carbon/icons-react";
-import "../../dashboard/addPatient/addPatient.component.css";
+import "./patientRegistration.component.css";
 
 import {
   Button,
@@ -15,10 +15,7 @@ import Navbar from "../navigation/navbar.component";
 
 function AddPatient() {
   return (
-      
     <div>
-      
-        <Navbar/>
       <h1 className="addText">
         <FaceAdd32 />
         AddPatient
