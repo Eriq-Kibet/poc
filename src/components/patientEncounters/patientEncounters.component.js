@@ -1,9 +1,9 @@
-import './patientDisplay.component.css'
+
 
 function DisplayPatient() {
     return (
         <div>
-            <hr height="10px"/>
+            <h1>Encounter</h1>
         </div>
     )
 }

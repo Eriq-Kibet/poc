@@ -11,7 +11,6 @@ import {
 } from "carbon-components-react";
 import { RadioButton } from "carbon-components-react/lib/components/RadioButton/RadioButton";
 import React from "react";
-import Navbar from "../navigation/navbar.component";
 
 function AddPatient() {
   return (

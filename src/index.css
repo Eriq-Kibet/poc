@@ -1,5 +1,10 @@
 @import "~carbon-components/css/carbon-components.css";
-.login {
+html{
+  background-image: url('./images/coronavirus.jpg');
+  /* background-size: cover; */
+
+}
+/* .login {
   margin-top: 10%;
   margin-left: 30%;
   margin-right: 30%;
@@ -12,7 +17,15 @@
   width: 50%;
 }
 .loginBtn {
-  width: 50%;
+  width: 50%;}
+.logo {
+  width: 100%;
+}
+.loginBtn {
+  width: fit-content;
+  
+}
+
 }
 .nav {
   margin-left: 60%;
@@ -43,4 +56,4 @@ span {
 }
 .searchBar {
   padding: 5px;
-}
+} */

@@ -5,7 +5,7 @@ export const Encounters = (patientUuid) => {
     .fetch(`${baseUrl}encounter?q=${patientUuid}&v=default&limit=`)
     .then((resp) => resp.json())
     .then((result) => {
-      console.log(result);
+      console.log('encounter results is ',result);
       return result.results
     })
     .catch((error) => console.log("error", error));

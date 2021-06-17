@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import AddPatient from "./components/PatientRegistration/patientRegistration.component";
 import { NotFound } from "./components/navigation/notFound.component";
-import PatientSearch from "./components/dashboard/patientSearch/patientSearch.component";
+import PatientSearch from "./components/patientSearch/patientSearch.component";
 import Login from "./components/login./login.component";
 import Navbar from './components/navigation/navbar.component'
 
+import DisplayPatient from "./components/patientEncounters/patientEncounters.component";
 import { useEffect, useState } from "react";
 
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/" component={Login} exact />
         <Route path="/searchpatient" component={PatientSearch} exact />
         <Route path="/addpatient" component={AddPatient} exact />
+        <Route path="/encounter" component={DisplayPatient} exact />
         {/* <Route component={NotFound} exact /> */}
       
     </BrowserRouter>
