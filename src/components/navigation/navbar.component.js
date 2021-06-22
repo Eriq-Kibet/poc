@@ -38,7 +38,7 @@ const Navbar = () => {
             <HeaderGlobalAction
               aria-label="Patient Registration"
               onClick={() => {
-                history.push("/addpatient");
+                history.push("/registerpatient");
               }}
             >
               <AddAlt32 />

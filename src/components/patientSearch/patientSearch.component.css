@@ -1,5 +1,8 @@
 @import "~carbon-components/css/carbon-components.css";
-.searchpatient{
-    padding-top: 3rem;
-    
+
+.searchpatient {
+  padding-top: 3rem;
+}
+.searchPagination {
+  width: 100%;
 }

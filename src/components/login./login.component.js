@@ -20,7 +20,7 @@ function Login() {
   };
 
   return (
-    <div>
+    
       <div className="login">
         <img className="logo" src={Openmrs} alt="Logo" />
         <form onSubmit={handleSubmit} className="loginForm">
@@ -45,8 +45,7 @@ function Login() {
           {invalidPassword && <p>invalid Password or Username </p>}
         </form>
       </div>
-    </div>
-  );
+      );
 }
 
 export default Login;

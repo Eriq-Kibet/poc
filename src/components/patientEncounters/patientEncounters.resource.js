@@ -1,12 +1,13 @@
-import { baseUrl } from "../../../constants";
+import { baseUrl } from "../../constants";
 
-export const Encounters = (patientUuid) => {
+export const EncountersDisplay = (patientuuid) => {
+
+
   return window
-    .fetch(`${baseUrl}encounter?q=${patientUuid}&v=default&limit=`)
+    .fetch(`${baseUrl}encounter?patient=${patientuuid}&custom:(uuid,display,encounterDatetime,location:(description))&v=default&limit=`)
     .then((resp) => resp.json())
     .then((result) => {
-      console.log('encounter results is ',result);
-      return result.results
+      return result.results;
     })
     .catch((error) => console.log("error", error));
 };

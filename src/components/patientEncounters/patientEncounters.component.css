@@ -1,1 +1,6 @@
 @import "~carbon-components/css/carbon-components.css";
+.encounterTable{
+  margin-top: 5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
