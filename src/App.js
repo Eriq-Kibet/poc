@@ -1,5 +1,5 @@
 import { BrowserRouter, Route} from "react-router-dom";
-import AddPatient from "./components/PatientRegistration/patientRegistration.component";
+import AddPatient from "./components/Registration/registerPerson.component";
 import PatientSearch from "./components/patientSearch/patientSearch.component";
 import Login from "./components/login./login.component";
 import Navbar from "./components/navigation/navbar.component";

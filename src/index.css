@@ -1,4 +1,7 @@
 @import "~carbon-components/css/carbon-components.css";
-body {
-  background-image: url("./images/coronavirus.jpg");
+.bx--label{
+    color: black;
+}
+.bx--header{
+    background-color: grey;
 }

@@ -1,0 +1,35 @@
+@import "~carbon-components/css/carbon-components.css";
+.registerPatient {
+  margin-top: 5rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+.names {
+  display: flex;
+}
+.names-input {
+  margin-right: 0.5rem;
+}
+.input2-Group {
+  display: flex;
+}
+.input2 {
+  margin-right: 0.5rem;
+}
+.addPerson {
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+.add-person-1 {
+  display: flex;
+  
+}
+span {
+  display: flex;
+}
+.addText {
+  text-align: center;
+}
+.btn-createPatient{
+  margin-top: 10px;
+}

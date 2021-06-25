@@ -6,3 +6,10 @@
 .searchPagination {
   width: 100%;
 }
+.mainSearch{
+  margin: 2.5rem;
+}
+.searchForm{
+  padding-top: 10px;
+padding-bottom: 10px;
+}

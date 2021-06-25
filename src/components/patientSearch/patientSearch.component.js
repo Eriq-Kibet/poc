@@ -16,7 +16,6 @@ import {
   Pagination,
 } from "carbon-components-react";
 const headers = [
-  { key: "identifier", header: "Identifier" },
   { key: "name", header: "Name" },
   { key: "age", header: "Age" },
   { key: "gender", header: "Gender" },
@@ -33,12 +32,12 @@ function PatientSearch() {
   const history = useHistory();
 
   const handleSearchChange = (e) => {
+    e.preventDefault();
     setPatientName(e.target.value);
     SearchPatient(patientName).then((resp) => {
       const results = resp.map((patient) => {
         return {
           id: patient.uuid,
-          identifier: patient.person.uuid,
           name: patient.person.display,
           age: patient.person.age,
           gender: patient.person.gender,
@@ -65,7 +64,7 @@ function PatientSearch() {
           onChange={handleSearchChange}
         />
 
-        <div>
+        <div className="searchForm">
           <DataTable
             rows={data.slice(rowIndex, rowIndex + currentPage)}
             headers={headers}

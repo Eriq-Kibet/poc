@@ -1,6 +1,5 @@
 import { useHistory } from "react-router-dom";
 import Search20 from "@carbon/icons-react/lib/search/20";
-import AppSwitcher20 from "@carbon/icons-react/lib/app-switcher/20";
 import {
   Header,
   HeaderName,
@@ -8,7 +7,8 @@ import {
   HeaderGlobalBar,
 } from "carbon-components-react/lib/components/UIShell";
 import { useEffect, useState } from "react";
-import { AddAlt32 } from "@carbon/icons-react";
+import { AddAlt32, Logout32 } from "@carbon/icons-react";
+import RateProject from "./rating.component";
 
 const Navbar = () => {
   const [isLoggedin, setIsLoggedin] = useState(
@@ -45,11 +45,11 @@ const Navbar = () => {
             </HeaderGlobalAction>
             <HeaderGlobalAction
               aria-label="Logout"
-              onClick={() => {
+              onClick={() => {<RateProject/>;
                 sessionStorage.clear(); history.push("/");
               }}
             >
-              <AppSwitcher20 />
+              <Logout32 />
             </HeaderGlobalAction>
           </HeaderGlobalBar>
         </Header>
