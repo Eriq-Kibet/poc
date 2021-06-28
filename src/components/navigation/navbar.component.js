@@ -18,7 +18,7 @@ const Navbar = () => {
   useEffect(() => {
     isLoggedin === null && history.push("/");
   }, []);
-
+ 
   return (
     <div>
       {window.location.pathname.length > 1 && (
@@ -45,8 +45,10 @@ const Navbar = () => {
             </HeaderGlobalAction>
             <HeaderGlobalAction
               aria-label="Logout"
-              onClick={() => {<RateProject/>;
-                sessionStorage.clear(); history.push("/");
+              onClick={() => {
+                <RateProject />;
+                sessionStorage.clear();
+                history.push("/");
               }}
             >
               <Logout32 />

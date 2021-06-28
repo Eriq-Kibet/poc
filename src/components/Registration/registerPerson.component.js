@@ -9,10 +9,13 @@ import {
   registerPatient,
   registerPerson,
 } from "./registerPerson.resource";
+import { useHistory } from "react-router";
 function AddPatient() {
   const [persoUuid, setpersoUuid] = useState();
   const [items, setItems] = useState([]);
   const [location, setLocation] = useState([]);
+  const history = useHistory()
+  const [registerButton, setRegisterButton] = useState()
   const [personData, setPersonData] = useState({
     givenName: "",
     familyName: "",
@@ -39,7 +42,7 @@ function AddPatient() {
     setPersonData(newdata);
   };
   // Converting Person Data to a JSON string
-  const submitPersonInfo = (e) => { 
+  const submitPersonInfo = (e) => {
     e.preventDefault();
     const bodyString = JSON.stringify({
       names: [
@@ -63,9 +66,11 @@ function AddPatient() {
       setpersoUuid(personUuid);
     });
   };
+
   // Converting Patient Data to a JSON string
   const submitPatienInfo = (e) => {
     e.preventDefault();
+    history.push('/searchpatient')
     const patientBodyString = JSON.stringify({
       person: `${persoUuid}`,
       identifiers: [
@@ -104,8 +109,7 @@ function AddPatient() {
     });
   }, []);
   return (
-    
-    <div>
+    <div className="main-Form">
       <div className="registerPatient">
         <div className="registerPerson">
           <p className="addText">
@@ -131,7 +135,7 @@ function AddPatient() {
                   value={personData.familyName}
                   required
                 />
-                <Select
+                <Select labelText="Gender"
                   value={personData.gender}
                   id="gender"
                   onChange={(e) => handlePerson(e)}
@@ -185,7 +189,7 @@ function AddPatient() {
                 />
               </div>
 
-              <Button type="submit" className="saveButton">
+              <Button type="submit" className="saveButton" disabled={persoUuid===""}>
                 Register Person
               </Button>
             </div>
@@ -208,12 +212,11 @@ function AddPatient() {
                 required
                 onChange={(e) => handlePatient(e)}
                 id="identifierType"
-              
               >
                 {items.map((list) => (
                   <SelectItem text={list.label} key={list.id} value={list.id} />
                 ))}
-              </Select  >
+              </Select>
               <Select
                 labelText="Location"
                 required
@@ -226,7 +229,11 @@ function AddPatient() {
               </Select>
             </div>
 
-            <Button type="submit" className="btn-createPatient">
+            <Button
+              type="submit"
+              className="btn-createPatient"
+              disabled={persoUuid === undefined}
+            >
               Create Patient
             </Button>
           </div>

@@ -1,8 +1,13 @@
 @import "~carbon-components/css/carbon-components.css";
+
 .registerPatient {
-  margin-top: 5rem;
+ padding: 10px;
+}
+.main-Form{
+  margin-top: 8rem;
   margin-left: 5rem;
   margin-right: 5rem;
+  border: groove rgb(189, 187, 187);
 }
 .names {
   display: flex;
@@ -12,24 +17,22 @@
 }
 .input2-Group {
   display: flex;
+  
 }
 .input2 {
   margin-right: 0.5rem;
 }
 .addPerson {
-  margin-left: 5rem;
-  margin-right: 5rem;
+  padding: 10px;
 }
-.add-person-1 {
-  display: flex;
-  
-}
-span {
-  display: flex;
-}
+
+
 .addText {
   text-align: center;
 }
-.btn-createPatient{
+.btn-createPatient {
+  margin-top: 10px;
+}
+.saveButton {
   margin-top: 10px;
 }

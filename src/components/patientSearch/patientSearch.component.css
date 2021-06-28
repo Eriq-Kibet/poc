@@ -1,15 +1,25 @@
 @import "~carbon-components/css/carbon-components.css";
 
 .searchpatient {
-  padding-top: 3rem;
+  margin-top: 6rem;
+  
+  border: groove rgb(201, 193, 193);
 }
 .searchPagination {
   width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 .mainSearch{
   margin: 2.5rem;
 }
 .searchForm{
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 10px;
 padding-bottom: 10px;
+}
+.searchHeading{
+  text-align: center;
 }

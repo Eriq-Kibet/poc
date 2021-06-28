@@ -56,6 +56,7 @@ function PatientSearch() {
   return (
     <div className="mainSearch">
       <div className="searchpatient">
+      <h2 className="searchHeading">Search Patient</h2>
         <Search
           labelText="search"
           value={patientName}
@@ -65,6 +66,7 @@ function PatientSearch() {
         />
 
         <div className="searchForm">
+          
           <DataTable
             rows={data.slice(rowIndex, rowIndex + currentPage)}
             headers={headers}
