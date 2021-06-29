@@ -27,7 +27,6 @@ function PatientSearch() {
   const [patientName, setPatientName] = useState("");
   const [rowIndex, setRowIndex] = useState(0);
   const [data, setData] = useState([]);
-  
 
   const history = useHistory();
 
@@ -49,24 +48,12 @@ function PatientSearch() {
   };
 
   const handleRowClick = (e) => {
-  
-   history.push(`/encounters/${e}`);
+    history.push(`/encounters/${e}`);
   };
-
-  return (
-    <div className="mainSearch">
-      <div className="searchpatient">
-      <h2 className="searchHeading">Search Patient</h2>
-        <Search
-          labelText="search"
-          value={patientName}
-          className="searchBar"
-          placeholder="Patient Identifier/ Patient Name"
-          onChange={handleSearchChange}
-        />
-
+  const PatientsTable = () => {
+    return (
+      <div>
         <div className="searchForm">
-          
           <DataTable
             rows={data.slice(rowIndex, rowIndex + currentPage)}
             headers={headers}
@@ -122,6 +109,25 @@ function PatientSearch() {
             }}
           />
         </div>
+      </div>
+    );
+  };
+  return (
+    <div className="mainSearch">
+      <div className="searchpatient">
+        <h2 className="searchHeading">Search Patient</h2>
+        <Search
+          labelText="search"
+          value={patientName}
+          className="searchBar"
+          placeholder="Patient Identifier/ Patient Name"
+          onChange={handleSearchChange}
+        />
+        {patientName ==="" ? (
+          <p className="enter-name">Enter patients name</p>
+        ) : (
+          PatientsTable()
+        )}
       </div>
     </div>
   );
