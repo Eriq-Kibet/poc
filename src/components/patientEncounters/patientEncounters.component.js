@@ -42,6 +42,7 @@ function Encounters() {
   }, [params.patientuuid]);
 
   return (
+    
     <div className="encounterTable">
       
       <div>
