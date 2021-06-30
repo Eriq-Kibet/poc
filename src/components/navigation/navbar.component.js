@@ -11,14 +11,14 @@ import { AddAlt32, Logout32 } from "@carbon/icons-react";
 import RateProject from "./rating.component";
 
 const Navbar = () => {
-  const [isLoggedin, setIsLoggedin] = useState(
+  const [isLoggedin] = useState(
     window.sessionStorage.getItem("auth.credentials")
   );
   const history = useHistory();
   useEffect(() => {
     isLoggedin === null && history.push("/");
-  }, []);
- 
+  }, [isLoggedin, history]);
+
   return (
     <div>
       {window.location.pathname.length > 1 && (

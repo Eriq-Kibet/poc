@@ -13,7 +13,7 @@ import {
   TableCell,
   Search,
   TableContainer,
-  Pagination,
+  Pagination
 } from "carbon-components-react";
 const headers = [
   { key: "name", header: "Name" },
@@ -123,7 +123,7 @@ function PatientSearch() {
           placeholder="Patient Identifier/ Patient Name"
           onChange={handleSearchChange}
         />
-        {patientName ==="" ? (
+        {patientName === "" ? (
           <p className="enter-name">Enter patients name</p>
         ) : (
           PatientsTable()
