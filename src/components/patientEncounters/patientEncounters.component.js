@@ -9,7 +9,7 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  Pagination,
+  Pagination
 } from "carbon-components-react/";
 import { EncountersDisplay } from "./patientEncounters.resource";
 import { useParams } from "react-router";
@@ -41,8 +41,8 @@ function Encounters() {
     }
   }, [params.patientuuid]);
 
+
   return (
-    
     <div className="encounterTable">
       
       <div>
@@ -55,9 +55,8 @@ function Encounters() {
             <TableContainer
               title="Patient Encounters"
               description={`${rows.length} Encounters found`}
-              
             >
-              <Table {...getTableProps()} >
+              <Table {...getTableProps()}>
                 <TableHead>
                   <TableRow>
                     {headers.map((header) => (

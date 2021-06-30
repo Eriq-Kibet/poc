@@ -15,7 +15,6 @@ function AddPatient() {
   const [items, setItems] = useState([]);
   const [location, setLocation] = useState([]);
   const history = useHistory()
-  const [registerButton, setRegisterButton] = useState()
   const [personData, setPersonData] = useState({
     givenName: "",
     familyName: "",
