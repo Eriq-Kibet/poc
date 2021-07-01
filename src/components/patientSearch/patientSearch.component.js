@@ -68,7 +68,7 @@ function PatientSearch() {
                   <TableHead>
                     <TableRow>
                       {headers.map((header) => (
-                        <TableHeader {...getHeaderProps({ header })}>
+                        <TableHeader key={rows.id}{...getHeaderProps({ header })}>
                           {header.header}
                         </TableHeader>
                       ))}

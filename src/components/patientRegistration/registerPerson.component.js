@@ -14,7 +14,7 @@ function AddPatient() {
   const [persoUuid, setpersoUuid] = useState();
   const [items, setItems] = useState([]);
   const [location, setLocation] = useState([]);
-  const history = useHistory()
+  const history = useHistory();
   const [personData, setPersonData] = useState({
     givenName: "",
     familyName: "",
@@ -69,7 +69,7 @@ function AddPatient() {
   // Converting Patient Data to a JSON string
   const submitPatienInfo = (e) => {
     e.preventDefault();
-    history.push('/searchpatient')
+    history.push("/searchpatient");
     const patientBodyString = JSON.stringify({
       person: `${persoUuid}`,
       identifiers: [
@@ -134,7 +134,8 @@ function AddPatient() {
                   value={personData.familyName}
                   required
                 />
-                <Select labelText="Gender"
+                <Select
+                  labelText="Gender"
                   value={personData.gender}
                   id="gender"
                   onChange={(e) => handlePerson(e)}
@@ -187,10 +188,13 @@ function AddPatient() {
                   required
                 />
               </div>
-
-              <Button type="submit" className="saveButton" disabled={persoUuid===""}>
-                Register Person
-              </Button>
+              {persoUuid === undefined ? (
+                <Button type="submit" className="saveButton">
+                  Register Person
+                </Button>
+              ) : (
+                ""
+              )}
             </div>
           </form>
         </div>
@@ -227,14 +231,13 @@ function AddPatient() {
                 ))}
               </Select>
             </div>
-
-            <Button
-              type="submit"
-              className="btn-createPatient"
-              disabled={persoUuid === undefined}
-            >
-              Create Patient
-            </Button>
+            {persoUuid === undefined ? (
+              "for you to register a patient you must register a person first"
+            ) : (
+              <Button type="submit" className="btn-createPatient">
+                Create Patient
+              </Button>
+            )}
           </div>
         </form>
       </div>

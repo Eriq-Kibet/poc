@@ -1,6 +1,6 @@
 import { baseUrl } from "../../constants";
 
-// POST Person Endpoint 
+// POST Person Endpoint
 export const registerPerson = (bodyString) => {
   return window
     .fetch(`${baseUrl}person`, {
@@ -22,7 +22,6 @@ export const GetIdentifierType = () => {
     .then((resp) => resp.json())
     .then((result) => {
       return result.results;
-      
     })
     .catch((error) => console.log("error", error));
 };
@@ -32,11 +31,10 @@ export const LocationList = () => {
     .fetch(`${baseUrl}location?&v=custom:(display,uuid)`)
     .then((resp) => resp.json())
     .then((result) => {
-      console.log("Location", result);
       return result.results;
     })
     .catch((error) => console.log("error", error));
-  };
+};
 
 // POST Patient Endpoint
 export const registerPatient = (patientBodyString) => {
@@ -51,6 +49,5 @@ export const registerPatient = (patientBodyString) => {
     .then((resp) => resp.json())
     .then((data) => {
       console.log(data);
-      
     });
 };

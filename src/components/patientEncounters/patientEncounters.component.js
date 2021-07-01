@@ -60,7 +60,7 @@ function Encounters() {
                 <TableHead>
                   <TableRow>
                     {headers.map((header) => (
-                      <TableHeader {...getHeaderProps({ header })}>
+                      <TableHeader key={rows.id}{...getHeaderProps({ header })}>
                         {header.header}
                       </TableHeader>
                     ))}
@@ -68,7 +68,7 @@ function Encounters() {
                 </TableHead>
                 <TableBody>
                   {rows.map((row) => (
-                    <TableRow {...getRowProps({ row })}>
+                    <TableRow key={rows.id}{...getRowProps({ row })}>
                       {row.cells.map((cell) => (
                         <TableCell key={cell.id}>{cell.value}</TableCell>
                       ))}
