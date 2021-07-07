@@ -20,32 +20,36 @@ function Login() {
   };
 
   return (
-    
-      <div className="login">
-        <img className="logo" src={Openmrs} alt="Logo" />
-        <form onSubmit={handleSubmit} className="loginForm">
-          <FormGroup className="formGroup" legendText="">
-            <TextInput
-              id="userName"
-              labelText="Username"
-              onChange={(event) => setUsername(event.target.value)}
-            />
-            <TextInput.PasswordInput
-              showPasswordLabel="Show password"
-              hidePasswordLabel="hide password"
-              id="password"
-              labelText="Password"
-              type="password"
-              onChange={(event) => setPassword(event.target.value)}
-            />
-          </FormGroup>
-          <Button type="submit" className="loginBtn" kind="primary">
-            Login
-          </Button>
-          {invalidPassword && <p>invalid Password or Username </p>}
-        </form>
-      </div>
-      );
+    <div className="login">
+      <img className="logo" src={Openmrs} alt="Logo" />
+      <form onSubmit={handleSubmit} className="loginForm">
+        <FormGroup className="formGroup" legendText="">
+          <TextInput
+            id="userName"
+            labelText="Username"
+            onChange={(event) => setUsername(event.target.value)}
+          />
+          <TextInput.PasswordInput
+            showPasswordLabel="Show password"
+            hidePasswordLabel="hide password"
+            id="password"
+            labelText="Password"
+            type="password"
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </FormGroup>
+        <Button
+          disabled={password === "" || username===""}
+          type="submit"
+          className="loginBtn"
+          kind="primary"
+        >
+          Login
+        </Button>
+        {invalidPassword && <p className="invalidPassword">Invalid Password or Username </p>}
+      </form>
+    </div>
+  );
 }
 
 export default Login;

@@ -17,3 +17,6 @@
 .loginBtn{
 padding: auto;
 }
+.invalidPassword{
+  color: red;
+}

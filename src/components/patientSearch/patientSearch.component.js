@@ -13,7 +13,7 @@ import {
   TableCell,
   Search,
   TableContainer,
-  Pagination
+  Pagination,
 } from "carbon-components-react";
 const headers = [
   { key: "name", header: "Name" },
@@ -68,7 +68,10 @@ function PatientSearch() {
                   <TableHead>
                     <TableRow>
                       {headers.map((header) => (
-                        <TableHeader key={rows.id}{...getHeaderProps({ header })}>
+                        <TableHeader
+                          key={rows.id}
+                          {...getHeaderProps({ header })}
+                        >
                           {header.header}
                         </TableHeader>
                       ))}
@@ -122,7 +125,7 @@ function PatientSearch() {
           className="searchBar"
           placeholder="Patient Identifier/ Patient Name"
           onChange={handleSearchChange}
-        />
+           />
         {patientName === "" ? (
           <p className="enter-name">Enter patients name</p>
         ) : (
