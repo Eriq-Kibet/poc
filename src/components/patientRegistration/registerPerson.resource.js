@@ -49,5 +49,6 @@ export const registerPatient = (patientBodyString) => {
     .then((resp) => resp.json())
     .then((data) => {
       console.log(data);
+      return data
     });
 };

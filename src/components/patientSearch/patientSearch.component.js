@@ -32,7 +32,10 @@ function PatientSearch() {
 
   const handleSearchChange = (e) => {
     e.preventDefault();
-    setPatientName(e.target.value);
+    if (e.target.value.match("^[a-zA-Z ]*$") != null) {
+      //validation of search
+      setPatientName(e.target.value);
+    }
     SearchPatient(patientName).then((resp) => {
       const results = resp.map((patient) => {
         return {
@@ -46,10 +49,11 @@ function PatientSearch() {
       setData(results);
     });
   };
-
+  // Navigate to Encounters
   const handleRowClick = (e) => {
     history.push(`/encounters/${e}`);
   };
+  // Display Patients Table
   const PatientsTable = () => {
     return (
       <div>
@@ -120,12 +124,14 @@ function PatientSearch() {
       <div className="searchpatient">
         <h2 className="searchHeading">Search Patient</h2>
         <Search
+          data-tesid="search-patient"
           labelText="search"
           value={patientName}
           className="searchBar"
           placeholder="Patient Identifier/ Patient Name"
           onChange={handleSearchChange}
-           />
+        />
+
         {patientName === "" ? (
           <p className="enter-name">Enter patients name</p>
         ) : (

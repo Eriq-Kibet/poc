@@ -20,8 +20,10 @@ describe("<Login/>", () => {
     const utils = render(<Login />);
   
     const input = utils.getByLabelText("Username");
+    const input2 = utils.getByLabelText("Password");
     return {
       input,
+      input2,
       ...utils,
     };
   };
@@ -30,4 +32,11 @@ describe("<Login/>", () => {
     fireEvent.change(input, { target: { username: "testuser" } });
     expect(input.username).toBe("testuser");
   });
+  test('Checks Password', () => {
+    const { input2 } = setup();
+    fireEvent.change(input2, {target: {password: "pass"}});
+    expect(input2.password).toBe("pass")
+  })
 });
+
+

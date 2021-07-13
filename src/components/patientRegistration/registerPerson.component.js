@@ -9,12 +9,12 @@ import {
   registerPatient,
   registerPerson,
 } from "./registerPerson.resource";
-import { useHistory } from "react-router";
+// import { useHistory } from "react-router";
 function AddPatient() {
   const [persoUuid, setpersoUuid] = useState();
   const [items, setItems] = useState([]);
   const [location, setLocation] = useState([]);
-  const history = useHistory();
+  // const history = useHistory();
   const [personData, setPersonData] = useState({
     givenName: "",
     familyName: "",
@@ -43,6 +43,7 @@ function AddPatient() {
   // Converting Person Data to a JSON string
   const submitPersonInfo = (e) => {
     e.preventDefault();
+
     const bodyString = JSON.stringify({
       names: [
         {
@@ -65,11 +66,12 @@ function AddPatient() {
       setpersoUuid(personUuid);
     });
   };
-
+  const [postResult, setPostResult] = useState();
   // Converting Patient Data to a JSON string
   const submitPatienInfo = (e) => {
     e.preventDefault();
-    history.push("/searchpatient");
+
+    // history.push("/searchpatient");
     const patientBodyString = JSON.stringify({
       person: `${persoUuid}`,
       identifiers: [
@@ -81,9 +83,11 @@ function AddPatient() {
         },
       ],
     });
-    registerPatient(patientBodyString);
+    registerPatient(patientBodyString).then((postResult) => {
+      setPostResult(postResult.error);
+    });
   };
-
+  console.log("Message ", postResult);
   useEffect(() => {
     //Get Patient Identifier Type
     GetIdentifierType().then((resp) => {
@@ -107,6 +111,8 @@ function AddPatient() {
       setLocation(locationResults);
     });
   }, []);
+
+  console.log("Person UUID", persoUuid);
   return (
     <div className="main-Form">
       <div className="registerPatient">
@@ -234,7 +240,10 @@ function AddPatient() {
             {persoUuid === undefined ? (
               "for you to register a patient you must register a person first"
             ) : (
-              <Button type="submit" className="btn-createPatient">
+              <Button
+                type="submit"
+                className="btn-createPatient"
+              >
                 Create Patient
               </Button>
             )}

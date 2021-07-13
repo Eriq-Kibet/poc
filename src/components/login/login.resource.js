@@ -9,5 +9,6 @@ export const Authenticate = (username, password) => {
             Authorization: `Basic ${token}`
         }
     }).then(resp => resp.json())
+    
         .then(data => data)
 }

@@ -1,5 +1,7 @@
 import "./patientEncounters.component.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import { useReactToPrint } from "react-to-print";
+
 import {
   DataTable,
   Table,
@@ -9,7 +11,8 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  Pagination
+  Pagination,
+  Button,
 } from "carbon-components-react/";
 import { EncountersDisplay } from "./patientEncounters.resource";
 import { useParams } from "react-router";
@@ -41,10 +44,13 @@ function Encounters() {
     }
   }, [params.patientuuid]);
 
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
 
   return (
     <div className="encounterTable">
-      
       <div>
         <DataTable
           rows={rows.slice(rowIndex, rowIndex + currentPage)}
@@ -60,7 +66,10 @@ function Encounters() {
                 <TableHead>
                   <TableRow>
                     {headers.map((header) => (
-                      <TableHeader key={rows.id}{...getHeaderProps({ header })}>
+                      <TableHeader
+                        key={rows.id}
+                        {...getHeaderProps({ header })}
+                      >
                         {header.header}
                       </TableHeader>
                     ))}
@@ -68,7 +77,7 @@ function Encounters() {
                 </TableHead>
                 <TableBody>
                   {rows.map((row) => (
-                    <TableRow key={rows.id}{...getRowProps({ row })}>
+                    <TableRow key={rows.id} {...getRowProps({ row })}>
                       {row.cells.map((cell) => (
                         <TableCell key={cell.id}>{cell.value}</TableCell>
                       ))}
@@ -97,6 +106,12 @@ function Encounters() {
             }}
           />
         </div>
+        {rows.length > 0 && (
+          <div>
+            <Button onClick={handlePrint}>Print this out</Button>
+            <Table ref={componentRef} />
+          </div>
+        )}
       </div>
     </div>
   );

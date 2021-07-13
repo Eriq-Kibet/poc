@@ -8,7 +8,6 @@ import {
 } from "carbon-components-react/lib/components/UIShell";
 import { useEffect, useState } from "react";
 import { AddAlt32, Logout32 } from "@carbon/icons-react";
-import RateProject from "./rating.component";
 
 const Navbar = () => {
   const [isLoggedin] = useState(
@@ -46,7 +45,6 @@ const Navbar = () => {
             <HeaderGlobalAction
               aria-label="Logout"
               onClick={() => {
-                <RateProject />;
                 sessionStorage.clear();
                 history.push("/");
               }}

@@ -1,4 +1,9 @@
-import { TextInput, Button, FormGroup } from "carbon-components-react";
+import {
+  TextInput,
+  Button,
+  FormGroup,
+  InlineNotification,
+} from "carbon-components-react";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { Authenticate } from "./login.resource";
@@ -39,14 +44,22 @@ function Login() {
           />
         </FormGroup>
         <Button
-          disabled={password === "" || username===""}
+          disabled={password === "" || username === ""}
           type="submit"
           className="loginBtn"
           kind="primary"
         >
           Login
         </Button>
-        {invalidPassword && <p className="invalidPassword">Invalid Password or Username </p>}
+        {invalidPassword && (
+          <div>
+            <InlineNotification
+              kind="error"
+              title="Invalid password or Username"
+              lowContrast
+            />
+          </div>
+        )}
       </form>
     </div>
   );
